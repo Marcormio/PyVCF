@@ -478,6 +478,8 @@ class Reader(object):
                 # short circuit the most common
                 if samp_fmt._fields[i] == 'GT':
                     sampdat[i] = vals
+		    if vals == ".":
+		 	sampdat[i] = None
                     continue
                 # genotype filters are a special case
                 elif samp_fmt._fields[i] == 'FT':
